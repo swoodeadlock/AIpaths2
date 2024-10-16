@@ -105,10 +105,20 @@
 
 
         .side-panel .closebtn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 36px;
+             position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px; /* Make the font smaller */
+            background: #ccc; /* Background box for a typical close button look */
+            color: black;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+    .side-panel .closebtn:hover {
+            background-color: #bbb;
         }
 
         .side-panel-content {
@@ -356,16 +366,24 @@
         }
 
         // Open the side panel
-        function openSidePanel() {
-            document.getElementById("sidePanel").style.width = "400px";
-document.getElementById("overlay").style.display = "block"; // Show the overlay
+         function openSidePanel() {
+            document.getElementById("sidePanel").style.width = "400px"; // Open the panel
+            document.getElementById("overlay").style.display = "block"; // Show the overlay
+            document.querySelector('.closebtn').style.display = 'block'; // Ensure the close button is visible
         }
 
-        // Close the side panel
         function closeSidePanel() {
-            document.getElementById("sidePanel").style.width = "0";
- document.getElementById("overlay").style.display = "none"; // Hide the overlay
+            document.getElementById("sidePanel").style.width = "0"; // Close the panel
+            document.getElementById("overlay").style.display = "none"; // Hide the overlay
+            setTimeout(function() {
+                document.querySelector('.closebtn').style.display = 'none'; // Hide the close button to prevent flicker
+            }, 300); // Adjust this timeout to match the slide transition time
         }
+
+        // Close the side panel when the user clicks on the overlay
+        document.getElementById("overlay").addEventListener("click", function() {
+            closeSidePanel();
+        });
     </script>
 </body>
 </html>
