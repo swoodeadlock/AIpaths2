@@ -28,6 +28,43 @@
     z-index: 1;
 }
 
+                /* Collapsible section for AI usage */
+        .collapsible {
+            background-color: #64D8CB; /* Teal background */
+            color: #004D40; /* Dark teal text color */
+            cursor: pointer;
+            padding: 15px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .collapsible:hover {
+            background-color: #4DB6AC; /* Slightly darker teal on hover */
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+            border-left: 4px solid #64D8CB;
+            margin-top: 10px;
+        }
+
+        .content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .content li {
+            margin-bottom: 8px;
+        }
+
 /* Module Box Styling */
 .module { 
     background-color: #E8E1F3; /* Soft purple background */
@@ -94,6 +131,21 @@ h1, h2 {
 <body>
     <h1>Researcher Path in AI for Traditional Chinese Medicine</h1>
 
+    
+    <!-- Accordion Button -->
+    <button class="collapsible">How Researchers Utilize AI Tools</button>
+    <div class="content">
+        <p>The sources provide numerous examples of how researchers can utilize AI tools in TCM:</p>
+        <ul>
+            <li><strong>Data Mining and Knowledge Discovery:</strong> Apply AI techniques like machine learning, deep learning, and natural language processing to analyze large datasets of TCM literature, clinical records, and research findings.</li>
+            <li><strong>Network Pharmacology:</strong> Combine network analysis with pharmacology to study the complex interactions between drugs, targets, and diseases.</li>
+            <li><strong>Precision TCM:</strong> Develop personalized TCM treatments by analyzing patient data, symptoms, and genetic information for more targeted therapies.</li>
+            <li><strong>Clinical Trial Design and Analysis:</strong> Assist in designing and analyzing clinical trials for TCM interventions by identifying patient cohorts and optimizing protocols.</li>
+            <li><strong>Literature Review and Synthesis:</strong> Automate literature searches and synthesize findings from multiple studies, improving efficiency and comprehensiveness.</li>
+        </ul>
+    </div>
+
+    
     <!-- Researcher Path content -->
     <div class="container">
         <div class="path">
