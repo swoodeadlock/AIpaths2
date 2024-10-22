@@ -90,7 +90,7 @@ h1, h2 {
             background-color: #333;
         }
 
-/* Collapsible section for AI usage */
+        /* Collapsible section for AI usage */
         .collapsible {
             background-color: #64D8CB; /* Teal background */
             color: #004D40; /* Dark teal text color */
@@ -128,7 +128,6 @@ h1, h2 {
         .content li {
             margin-bottom: 8px;
         }
-
 
     </style>
 </head>
@@ -273,5 +272,22 @@ h1, h2 {
             }
         }
     </script>
+    
+<!-- Script for accordion functionality -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var coll = document.querySelector('.collapsible');
+        var content = document.querySelector('.content');
+
+        coll.addEventListener("click", function() {
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
