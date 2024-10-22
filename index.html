@@ -141,6 +141,25 @@
         .learn-more-button:hover {
             background-color: #555;
         }
+
+        <head>
+    <style>
+        /* Existing CSS styles here */
+
+        /* Researcher Path button specific styling */
+        .researcher-button {
+            background: linear-gradient(135deg, #66ccff, #ff99cc); /* Gradient colors */
+            color: white; /* Ensure text remains readable */
+            border: none; /* Remove any borders */
+            transition: background-color 0.3s;
+        }
+
+        .researcher-button:hover {
+            background: linear-gradient(135deg, #3399ff, #ff6699); /* Darker gradient on hover */
+        }
+    </style>
+</head>
+
         /* Overlay CSS */
         #overlay {
             position: fixed;
@@ -160,7 +179,7 @@
     <a class="learn-more-button" onclick="openSidePanel()">What is a "Level"?</a>
 
     <!-- New Researcher Path Button -->
-<a class="learn-more-button" href="researcher-path.html">Click for Researcher Path</a>
+<a class="learn-more-button researcher-button" href="researcher-path.html">Click for Researcher Path</a>
     
     <div class="module common">
         <h2>Common Starting Point: Introduction to AI and its Relevance to TCM</h2>
