@@ -95,20 +95,22 @@ h1, h2 {
             background-color: #64D8CB; /* Teal background */
             color: #004D40; /* Dark teal text color */
             cursor: pointer;
-            padding: 12px;
+            padding: 20px; /* Increased padding for a bigger button */
             width: 60%;
             border: none;
             text-align: center;
             outline: none;
-            font-size: 16px;
+            font-size: 20px; /* Larger font size */
+            font-weight: bold; /* Make the font bold */
             border-radius: 4px;
             margin: 0 auto; /* Center the button */
             display: block;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for hover effect */
         }
 
         .collapsible:hover {
             background-color: #4DB6AC; /* Slightly darker teal on hover */
+            transform: scale(1.03); /* Slight zoom on hover for flamboyant effect */
         }
 
         .content {
@@ -118,6 +120,10 @@ h1, h2 {
             background-color: #f9f9f9;
             border-left: 4px solid #64D8CB;
             margin-top: 10px;
+            width: 60%; /* Same width as the button */
+            margin-left: auto;
+            margin-right: auto;
+            transition: max-height 0.5s ease-out; /* Smooth transition */
         }
 
         .content ul {
@@ -127,6 +133,11 @@ h1, h2 {
 
         .content li {
             margin-bottom: 8px;
+        }
+
+        /* Added spacing between accordion and the learning path modules */
+        .spacing {
+            margin-top: 60px;
         }
 
     </style>
@@ -148,6 +159,8 @@ h1, h2 {
         </ul>
     </div>
 
+    <!-- Spacing between accordion and first module -->
+    <div class="spacing"></div>
     
     <!-- Researcher Path content -->
     <div class="container">
@@ -273,21 +286,22 @@ h1, h2 {
         }
     </script>
     
-<!-- Script for accordion functionality -->
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var coll = document.querySelector('.collapsible');
-        var content = document.querySelector('.content');
+    <!-- JavaScript section for accordion functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var coll = document.querySelector('.collapsible');
+            var content = document.querySelector('.content');
 
-        coll.addEventListener("click", function() {
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
+            coll.addEventListener("click", function() {
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.display = "block";
+                    content.style.maxHeight = content.scrollHeight + "px"; /* Smooth unfolding */
+                }
+            });
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
