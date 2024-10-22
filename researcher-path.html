@@ -90,13 +90,13 @@ h1, h2 {
             background-color: #333;
         }
 
-        /* Collapsible section for AI usage */
+       /* Collapsible section for AI usage */
         .collapsible {
             background-color: #64D8CB; /* Teal background */
             color: #004D40; /* Dark teal text color */
             cursor: pointer;
             padding: 20px; /* Increased padding for a bigger button */
-            width: 45%;
+            width: 42%; /* Reduced to 70% of original width */
             border: none;
             text-align: center;
             outline: none;
@@ -105,26 +105,30 @@ h1, h2 {
             border-radius: 4px;
             margin: 0 auto; /* Center the button */
             display: block;
-            transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for hover effect */
+            transition: background-color 0.3s ease; /* Added transition for hover effect */
         }
 
         .collapsible:hover {
             background-color: #4DB6AC; /* Slightly darker teal on hover */
-            transform: scale(1.05); /* Slight zoom on hover for flamboyant effect */
         }
 
+        /* Smooth sliding effect for the content */
         .content {
-            padding: 0 18px;
-            display: none;
+            max-height: 0;
             overflow: hidden;
+            padding: 0 18px;
             background-color: #f9f9f9;
             border-left: 4px solid #64D8CB;
             margin-top: 10px;
-            width: 45%; /* Same width as the button */
+            width: 42%; /* Same width as the button */
             margin-left: auto;
             margin-right: auto;
-            transition: max-height 0.5s ease-out, transform 0.5s ease-out; /* Smooth transition for height and scaling */
-            transform-origin: top; /* Scaling transition starts from the top */
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Smooth transition */
+        }
+
+        .content.expanded {
+            max-height: 500px; /* Set a height that can accommodate your content */
+            padding: 18px; /* Restore padding when expanded */
         }
 
         .content ul {
@@ -140,7 +144,6 @@ h1, h2 {
         .spacing {
             margin-top: 60px;
         }
-
     </style>
 </head>
 <body>
@@ -294,14 +297,10 @@ h1, h2 {
             var content = document.querySelector('.content');
 
             coll.addEventListener("click", function() {
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                    content.style.maxHeight = null;
-                    content.style.transform = "scale(0.9)"; // Shrink on fold
+                if (content.classList.contains("expanded")) {
+                    content.classList.remove("expanded");
                 } else {
-                    content.style.display = "block";
-                    content.style.maxHeight = content.scrollHeight + "px";
-                    content.style.transform = "scale(1)"; // Grow back to full size
+                    content.classList.add("expanded");
                 }
             });
         });
