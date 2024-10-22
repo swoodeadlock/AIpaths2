@@ -12,24 +12,57 @@
             justify-content: center;
             padding: 10px;
         }
-        .path { 
-            width: 60%; /* Make the path container wider since it's centered */
-            border: 2px solid #333;
-            border-radius: 10px;
-            padding: 10px;
-            margin: 10px auto;
-            transition: all 0.3s ease;
-        }
-        .path:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .module { background-color: #f0f0f0; border: 1px solid #999; border-radius: 5px; padding: 10px; margin: 10px 0; }
-        .level { font-weight: bold; color: #1a5f7a; }
-        .objective { font-style: italic; color: #666; }
-        .resources { background-color: #e6e6e6; padding: 5px; margin-top: 5px; }
-        h1, h2 { text-align: center; }
+/* Path Container */
+.path { 
+    width: 60%; /* Centered path with wider width */
+    border: 2px solid #333; 
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px auto; 
+    transition: all 0.2s ease; /* Make transitions faster */
+}
+
+.path:hover {
+    transform: scale(1.02); /* Subtle zoom instead of a big zoom */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); /* Highlight effect */
+    z-index: 1;
+}
+
+/* Module Box Styling */
+.module { 
+    background-color: #E8E1F3; /* Soft purple background */
+    border: 1px solid #999; 
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0; 
+}
+
+/* Hover effect on module */
+.module:hover {
+    background-color: #D6C1E8; /* Slightly darker purple on hover */
+}
+
+/* Text Styling */
+.level { 
+    font-weight: bold; 
+    color: #1a5f7a; 
+}
+
+.objective { 
+    font-style: italic; 
+    color: #666; 
+}
+
+.resources { 
+    background-color: #e6e6e6; 
+    padding: 5px; 
+    margin-top: 5px; 
+}
+
+h1, h2 { 
+    text-align: center; 
+}
+
 
         /* Adjusting for responsiveness */
         @media (max-width: 768px) {
